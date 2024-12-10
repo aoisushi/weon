@@ -190,7 +190,13 @@ p {
     text-align: left;
 }
 
+.desktop-logo {
+    display: block;
+}
 
+.mobile-logo {
+    display: none;
+}
 
 
 @media only screen and (max-width: 430px) {
@@ -212,12 +218,25 @@ p {
         font-size: 13px;
     }
 
-
     .card {
         max-width: 326px;
-        padding: 40px 24px;
-        
+        padding: 40px 24px;   
     }
 
+    .search input {
+        width: 30px;
+    }
+    .search button {
+        width: 45px;
+        height: 45px;
+    }
+
+    .desktop-logo {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: block;
+    }
     
   }
