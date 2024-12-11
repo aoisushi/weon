@@ -32,7 +32,7 @@ body {
 
 /* Typography */
 h1 {
-    font-size: 96px;
+    font-size: 6rem;
     font-style: normal;
     font-weight: 600;
     line-height: 110%; /* 105.6px */
@@ -41,7 +41,7 @@ h1 {
 }
 
 h2 {
-    font-size: 31px;
+    font-size: 1.9375rem;
     font-style: normal;
     font-weight: 600;
     line-height: 110%; /* 34.1px */
@@ -50,7 +50,7 @@ h2 {
 }
 
 h3 {
-    font-size: 25px;
+    font-size: 1.5625rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -59,7 +59,7 @@ h3 {
 }
 
 .caption {
-    font-size: 16px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 300;
     line-height: 20px; /* 100% */
@@ -69,7 +69,7 @@ h3 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -80,19 +80,19 @@ p {
 
 .card {
     width: 90%;
-    max-width: 470px;
-    border-radius: 35px;
+    max-width: 29.375rem;
+    border-radius: 2.1875rem;
     background: rgba(255, 255, 255, 0.50);
     color: var(--SanMarino-400);
-    margin: 100px auto 0;
-    padding: 40px 32px;
+    margin: 6.25rem auto 0;
+    padding: 2.5rem 2rem;
     text-align: center;
     box-shadow: 16px 12px 33.3px 0px rgba(0, 0, 0, 0.12);
     /* background: linear-gradient(135deg, #00feba, #5b548a); */
 }
 
 .search, .condition, .details {
-    margin-bottom: 48px;
+    margin-bottom: 2rem;
 }
 
 .search {
@@ -107,12 +107,12 @@ p {
     outline: 0;
     background: var(--white);
     color: var(--SanMarino-800);
-    padding: 16px 24px;
+    padding: 1rem 1.5rem;
     /* height: 60px; */
-    border-radius: 30px;
+    border-radius: 1.875rem;
     flex: 1;
-    margin-right: 16px;
-    font-size: 18px;
+    margin-right: 1rem;
+    font-size: 1.125rem;
     box-shadow: 16px 12px 33.3px 0px rgba(0, 0, 0, 0.12);
 }
 
@@ -121,20 +121,20 @@ p {
     outline: 0;
     background: var(--white);
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 3.75rem;
+    height: 3.75rem;
     cursor: pointer;
     box-shadow: 16px 12px 33.3px 0px rgba(0, 0, 0, 0.12);
 }
 
 .search-icon {
-    font-size: 25px;
+    font-size: 1.5625rem;
     color: var(--SanMarino-600);
 }
 
 .weather-icon {
-    width: 170px;
-    margin-bottom: 48px;
+    width: 10.625rem;
+    margin-bottom: 3rem;
 }
 
 
@@ -142,7 +142,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 1.25rem;
     /* width: 300px; */
 }
 
@@ -153,12 +153,12 @@ p {
 }
 
 .col img {
-    width: 40px;
-    margin-right: 10px;
+    width: 2.5rem;
+    margin-right: 0.625rem;
 }
 
 .humidity, .wind {
-    font-size: 28px;
+    font-size: 1.75rem;
     margin-top: -6px;
 }
 
@@ -169,23 +169,23 @@ p {
 
 .error {
     text-align: left;
-    margin-left: 10px;
-    font-size: 14px;
-    margin-top: -40px;
+    margin-left: 0.625rem;
+    font-size: 0.875rem;
+    margin-top: -2.5rem;
     display: none;
-    margin-bottom: 48px;
+    margin-bottom: 3rem;
 }
 
 
 .fashion-advice {
-    padding: 16px 24px;
+    padding: 1rem 1.5rem;
     background: var(--SanMarino-200);
-    border-radius: 25px;
+    border-radius: 1.5625rem;
     
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 24px;
+    gap: 1.5rem;
 
     text-align: left;
 }
@@ -201,34 +201,40 @@ p {
 
 @media only screen and (max-width: 430px) {
 
+    body {
+        overflow-y: scroll;
+        margin: 0 auto;
+        height: 100vh;
+    }
+
     /* Typo */
     h1 {
-        font-size: 64px;
+        font-size: 4rem;
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
     
     h3 {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     p-m {
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
 
     .card {
-        max-width: 326px;
-        padding: 40px 24px;   
+        max-width: 20.375rem;
+        padding: 2.5rem 1.5rem;   
     }
 
     .search input {
-        width: 30px;
+        width: 1.875rem;
     }
     .search button {
-        width: 45px;
-        height: 45px;
+        width: 2.8125rem;
+        height: 2.8125rem;
     }
 
     .desktop-logo {
@@ -237,6 +243,10 @@ p {
 
     .mobile-logo {
         display: block;
+    }
+
+    .search, .condition, .details {
+        margin-bottom: 1.5rem;
     }
     
   }
