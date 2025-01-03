@@ -6,60 +6,63 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
-    <title>WE/ON | your fashion style assistant with real-time weather</title>
+    <title>WE/ON | Your Fashion Style Assistant with Real-Time Weather</title>
 </head>
-<body>
-    <div class="card">
-        <!-- search bar -->
-        <div class="search">
-            <input class="caption" type="text" placeholder="enter city name" spellcheck="false">
-            <button><ion-icon class="search-icon" name="search-outline"></ion-icon></button>
-        </div>
-
-        <!-- error message -->
-        <div class="error">
-            <p>Invalid city name</p>
-        </div>
-
-        <!-- weather info -->
-        <div class="weather">
-            <!-- Weather and location -->
-            <div class="condition">
-                <img src="images/rain.png" class="weather-icon">
-                <!-- City name -->
-                <h2 class="city">New York</h2>
-                <!-- Temperature -->
-                <h1 class="temp">22°C</h1>
+<body class="bg">
+    <div class="container">
+        <div class="card">
+            <!-- search bar -->
+            <div class="search">
+                <input class="caption" type="text" placeholder="enter city name" spellcheck="false">
+                <button><ion-icon class="search-icon" name="search-outline"></ion-icon></button>
             </div>
-
-            <!-- details of the current weather -->
-            <div class="details">
-                <div class="col">
-                    <!-- <img src="images/humidity.png"> -->
-                    <div>
-                        <h3 class="humidity h3">50%</h3>
-                        <p>Humidity</p>
+    
+            <!-- error message -->
+            <div class="error">
+                <p>Invalid city name</p>
+            </div>
+    
+            <!-- weather info -->
+            <div class="weather">
+                <!-- Weather and location -->
+                <div class="condition">
+                    <img src="images/rain.png" class="weather-icon">
+                    <!-- City name -->
+                    <h2 class="city">New York</h2>
+                    <!-- Temperature -->
+                    <h1 class="temp">22°C</h1>
+                </div>
+    
+                <!-- details of the current weather -->
+                <div class="details">
+                    <div class="col">
+                        <!-- <img src="images/humidity.png"> -->
+                        <div>
+                            <h3 class="humidity h3">50%</h3>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- <img src="images/wind.png"> -->
+                        <div>
+                            <h3 class="wind h3">15 km/h</h3>
+                            <p>Wind Speed</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <!-- <img src="images/wind.png"> -->
-                    <div>
-                        <h3 class="wind h3">15 km/h</h3>
-                        <p>Wind Speed</p>
-                    </div>
+                
+                <!-- Fashion Advice -->
+                <div class="fashion-advice">
+                    <img class="desktop-logo" src="./images/logo-big.svg">
+                    <img class="mobile-logo" src="./images/logo-small.svg">
+                    <p class="advice-text caption">Stay stylish with our weather tips!</p>
                 </div>
             </div>
-            
-            <!-- Fashion Advice -->
-            <div class="fashion-advice">
-                <img class="desktop-logo" src="./images/logo-big.svg">
-                <img class="mobile-logo" src="./images/logo-small.svg">
-                <p class="advice-text caption">Stay stylish with our weather tips!</p>
-            </div>
-
         </div>
     </div>
+
     
     <script>
         const apiKey = "5103cf641c19a5ed0383488fc122d2f4";
@@ -71,17 +74,66 @@
 
 
         // Generate the weather tips according to the current weather
+        // function getFashionAdvice(temp, weatherCondition) {
+        //     if (temp < 10) {
+        //         return "It's freezing! Wear a heavy coat, scarf, gloves, and a beanie.";
+        //     } else if (temp < 20) {
+        //         return "Chilly weather! A warm jacket and jeans will keep you comfy.";
+        //     } else if (temp < 30) {
+        //         return "Mild weather. A t-shirt and light jacket should work.";
+        //     } else {
+        //         return "It's hot! Opt for shorts, a tank top, and sunglasses.";
+        //     }
+        // }
+
         function getFashionAdvice(temp, weatherCondition) {
-        if (temp < 10) {
-            return "It's freezing! Wear a heavy coat, scarf, gloves, and a beanie.";
-        } else if (temp < 20) {
-            return "Chilly weather! A warm jacket and jeans will keep you comfy.";
-        } else if (temp < 30) {
-            return "Mild weather. A t-shirt and light jacket should work.";
-        } else {
-            return "It's hot! Opt for shorts, a tank top, and sunglasses.";
+            if (temp < 0) {
+                if (weatherCondition.includes("Snow")) {
+                    return "Bundle up with a heavy coat, thermal leggings, snow boots, gloves, a scarf, and a hat.";
+                } else if (weatherCondition.includes("Mist") || weatherCondition.includes("Fog")) {
+                    return "Wear a warm coat, waterproof boots, and consider reflective gear for visibility.";
+                } else {
+                    return "It's extremely cold! Layer with a heavy coat, thermal wear, gloves, and a beanie.";
+                }
+            } else if (temp < 10) {
+                if (weatherCondition.includes("Rain")) {
+                    return "A warm raincoat, waterproof boots, and an umbrella are essentials.";
+                } else if (weatherCondition.includes("Clouds")) {
+                    return "Wear a thick jacket, jeans, and a scarf to stay cozy.";
+                } else {
+                    return "It's cold! A heavy sweater and a warm coat will keep you comfortable.";
+                }
+            } else if (temp < 20) {
+                if (weatherCondition.includes("Rain")) {
+                    return "A lightweight rain jacket with layers underneath and waterproof shoes work well.";
+                } else if (weatherCondition.includes("Clear")) {
+                    return "Chilly but pleasant! A cardigan or light jacket with jeans is perfect.";
+                } else {
+                    return "Cool weather calls for a stylish jacket, a scarf, and comfortable footwear.";
+                }
+            } else if (temp < 30) {
+                if (weatherCondition.includes("Clouds")) {
+                    return "Light layers like a t-shirt with a casual jacket or a cardigan are ideal.";
+                } else if (weatherCondition.includes("Clear")) {
+                    return "Mild weather! Opt for a breathable t-shirt or a blouse with lightweight pants.";
+                } else if (weatherCondition.includes("Drizzle")) {
+                    return "A light raincoat or a water-resistant jacket will keep you dry and comfortable.";
+                }
+            } else {
+                if (weatherCondition.includes("Clear")) {
+                    return "It's hot and sunny! Stay cool with shorts, a tank top, and sunglasses.";
+                } else if (weatherCondition.includes("Clouds")) {
+                    return "Wear breathable fabrics like a light dress or cotton shorts and a t-shirt.";
+                } else if (weatherCondition.includes("Rain")) {
+                    return "Rainy but warm! A lightweight waterproof jacket and comfortable sandals are a good choice.";
+                }
+            }
         }
-    }
+
+
+        window.addEventListener('load', () => {
+            checkWeather('vancouver');
+        })
         
         async function checkWeather(city) {
             const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
