@@ -17,8 +17,8 @@
 * {
     margin: 0 auto;
     padding: 0 auto;
-    font-family: "Poppins", sans-serif;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -88,7 +88,7 @@ img {
 }
 
 .container {
-    padding: 1.25rem;
+    padding: 0 1.25rem;
 }
 
 .card {
@@ -146,7 +146,7 @@ img {
 
 .weather-icon {
     width: 10.625rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -155,7 +155,7 @@ img {
     align-items: center;
     justify-content: space-between;
     /* padding: 0 1.25rem; */
-    width: 300px;
+    /* width: 300px; */
     margin: 2rem auto;
 }
 
@@ -170,9 +170,13 @@ img {
     margin-right: 0.625rem;
 } */
 
-.humidity, .wind {
+.humidity, .wind, .feels-like {
     font-size: 1.75rem;
     margin-top: -6px;
+}
+
+.col p {
+    font-size: 14px;
 }
 
 /* will display none when the user first browse the website, but we don't need it right now */
@@ -266,6 +270,10 @@ img {
 
     .details {
         width: auto;
+        flex-direction: column;
+        gap: 8px;
     }
-
+    .col {
+        text-align: center;
+    }
   }
